@@ -1,0 +1,14 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+ul, ol{
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+
