@@ -21,6 +21,10 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="views/sources/adminlte/plugins/fontawesome-free/css/all.min.css">
+  
+  <link rel="stylesheet" href="views/sources/plugins/jdSlider/jdSlider.css">
+  
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="views/sources/adminlte/dist/css/adminlte.min.css">
 
@@ -52,6 +56,11 @@
 
 <!-- bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- jdslider -->
+<script src="views/sources/plugins/jdSlider/jdSlider.js"></script>
+
+
 
 <!-- AdminLTE App -->
 <script src="views/sources/adminlte/dist/js/adminlte.min.js"></script>

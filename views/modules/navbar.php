@@ -4,7 +4,7 @@
     <div class="col-12 col-lg-2 mt-1">
       <div class="d-flex justify-content-center">
         <a href="home" class="navbar-brand">
-          <img src="views/sources/img/identidad-corporativa/logo.png" alt="" class="brand-image img-fluid py-3 px-5 p-lg-0 pe-lg-3">
+          <img src="views/sources/img/template/logo.png" alt="" class="brand-image img-fluid py-3 px-5 p-lg-0 pe-lg-3">
         </a>
       </div>
     </div>
