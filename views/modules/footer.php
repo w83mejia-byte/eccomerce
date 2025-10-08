@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark small">
+<div class="container-fluid bg-dark small footer">
   <div class="container py-5 text-light">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
@@ -7,7 +7,7 @@
 
         <div class="col-12 col-sm-4 col-md-3 col-lg-4">
           <h4 class="lead">
-            <a href="#" class="text-uppercase">Ropa</a>
+            <a href="#" class="text-uppercase templateColor">Ropa</a>
           </h4>
 
           <hr class="border-white">
@@ -31,7 +31,7 @@
         <div class="col-12 col-sm-4 col-md-3 col-lg-4">
 
           <h4 class="lead">
-            <a href="#" class="text-uppercase">Calzado</a>
+            <a href="#" class="text-uppercase templateColor">Calzado</a>
           </h4>
 
           <hr class="border-white">
@@ -56,7 +56,7 @@
         <div class="col-12 col-sm-4 col-md-3 col-lg-4">
 
           <h4 class="lead">
-            <a href="#" class="text-uppercase">Tecnología</a>
+            <a href="#" class="text-uppercase templateColor">Tecnología</a>
           </h4>
 
           <hr class="border-white">

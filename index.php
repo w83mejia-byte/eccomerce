@@ -14,6 +14,9 @@ if(!is_dir($directorio)){
 
 ini_set('error_log', $directorio . '/errores.log');
 
+
+//requerir controladores
+
 require_once "Controllers/TemplateController.php";
 
 

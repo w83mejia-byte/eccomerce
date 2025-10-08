@@ -148,3 +148,22 @@ MOVIL (XS revisamos en 320px)
 }
 
 
+/*=============================================
+footer
+=============================================*/
+
+a.templateColor{
+    color: #47BAC1;
+}
+
+.footer li a{
+    color:#fff !important;
+}
+
+.footer li a:hover{
+    color:#47BAC1 !important;
+}
+
+
+
+

@@ -22,7 +22,7 @@
 
                         <a href="#">
 
-                            <button class="my-lg-3 btn text-uppercase templateColor border-0">
+                            <button class="my-lg-3 btn text-uppercase bg-info border-0">
 
                             VER PRODUCTO 
 
@@ -46,7 +46,7 @@
                         <h2 class="text-uppercase" style="color:#fff">Lorem ipsum dolor sit</h2>
                         <h3 class="text-uppercase" style="color:#fff">Lorem ipsum dolor sit</h3>
                         <a href="#">
-                            <button class="my-lg-3 btn text-uppercase templateColor border-0">
+                            <button class="my-lg-3 btn text-uppercase bg-info border-0">
                             VER PRODUCTO 
                             </button>
                         </a>
@@ -77,8 +77,10 @@
 
 <div class="d-flex justify-content-center">
 
-    <a id="btnSlide" class="btn border-0 rounded-0 templateColor py-2" style="width:200px"> 
+    <a id="btnSlide" class="btn border-0 rounded-0 bg-info py-2" style="width:200px"> 
         <i class="fa fa-angle-up templateColor"></i>
     </a>
+
+    <i></i>
 
 </div>

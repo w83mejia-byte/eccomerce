@@ -64,8 +64,10 @@
 
 <!-- AdminLTE App -->
 <script src="views/sources/adminlte/dist/js/adminlte.min.js"></script>
-<!-- slider -->
+
+<!-- Scripts propios -->
 <script src="views/sources/js/slide.js"></script>
+<script src="views/sources/js/products.js"></script>
 
 </body>
 </html>
