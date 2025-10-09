@@ -175,5 +175,144 @@
         </div>
 
         <!-- LIST -->
+        <div class="row list-2" style="display:none">
+
+            <div class="media border-bottom px-3 pt-4 pb-3 pb-lg-2">
+                <figure class="imgProduct">
+                    <img src="views/sources/img/products/ropa/1/ropa01.jpg" alt="" style="width:150px">
+                </figure>
+
+                <div class="media-body ps-3">
+                    <h5>
+                        <small class="text-uppercase text-muted">Falda de Flores</small>
+                    </h5>
+                    <span class="badge badgeNew bg-warning text-uppercase text-white p-2">Nuevo</span>
+                    <div class="my-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, rerum! Sit maiores quia numquam repellendus, tempora suscipit cumque natus tempore autem distinctio cupiditate adipisci impedit?
+                    </div>
+
+                    <div class="clearfix">
+                        <h5 class="float-start text-uppercase text-muted">
+                            <del class="small" style="color:#bbb">USD 129</del> $11
+                        </h5>
+
+                        <span class="float-end">
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media border-bottom px-3 pt-4 pb-3 pb-lg-2">
+                <figure class="imgProduct">
+                    <img src="views/sources/img/products/ropa/2/ropa02.jpg" alt="" style="width:150px">
+                </figure>
+
+                <div class="media-body ps-3">
+                    <h5>
+                        <small class="text-uppercase text-muted">Falda de Flores</small>
+                    </h5>
+                    <span class="badge badgeNew bg-warning text-uppercase text-white p-2">Nuevo</span>
+                    <div class="my-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, rerum! Sit maiores quia numquam repellendus, tempora suscipit cumque natus tempore autem distinctio cupiditate adipisci impedit?
+                    </div>
+
+                    <div class="clearfix">
+                        <h5 class="float-start text-uppercase text-muted">
+                            <del class="small" style="color:#bbb">USD 129</del> $11
+                        </h5>
+
+                        <span class="float-end">
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media border-bottom px-3 pt-4 pb-3 pb-lg-2">
+                <figure class="imgProduct">
+                    <img src="views/sources/img/products/ropa/3/ropa03.jpg" alt="" style="width:150px">
+                </figure>
+
+                <div class="media-body ps-3">
+                    <h5>
+                        <small class="text-uppercase text-muted">Falda de Flores</small>
+                    </h5>
+                    <span class="badge badgeNew bg-warning text-uppercase text-white p-2">Nuevo</span>
+                    <div class="my-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, rerum! Sit maiores quia numquam repellendus, tempora suscipit cumque natus tempore autem distinctio cupiditate adipisci impedit?
+                    </div>
+
+                    <div class="clearfix">
+                        <h5 class="float-start text-uppercase text-muted">
+                            <del class="small" style="color:#bbb">USD 129</del> $11
+                        </h5>
+
+                        <span class="float-end">
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media border-bottom px-3 pt-4 pb-3 pb-lg-2">
+                <figure class="imgProduct">
+                    <img src="views/sources/img/products/ropa/4/ropa04.jpg" alt="" style="width:150px">
+                </figure>
+
+                <div class="media-body ps-3">
+                    <h5>
+                        <small class="text-uppercase text-muted">Falda de Flores</small>
+                    </h5>
+                    <span class="badge badgeNew bg-warning text-uppercase text-white p-2">Nuevo</span>
+                    <div class="my-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, rerum! Sit maiores quia numquam repellendus, tempora suscipit cumque natus tempore autem distinctio cupiditate adipisci impedit?
+                    </div>
+
+                    <div class="clearfix">
+                        <h5 class="float-start text-uppercase text-muted">
+                            <del class="small" style="color:#bbb">USD 129</del> $11
+                        </h5>
+
+                        <span class="float-end">
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button type="button" class="btn btn light border">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+        
+
+
+
     </div>
 </div>
