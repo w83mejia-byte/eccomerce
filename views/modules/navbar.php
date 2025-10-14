@@ -11,7 +11,11 @@
 
     <div class="col-12 col-lg-7 col-xl-8 mt-1 px-3 px-lg-0">
       
-      <a href="#" data-widget="pushmenu" role="button" class="nav-link float-start"> <i class="fas fa-bars"></i></a>
+      <?php if(isset($_SESSION['admin'])):?>
+
+        <a href="#" data-widget="pushmenu" role="button" class="nav-link float-start"> <i class="fas fa-bars"></i></a>
+        
+      <?php endif;?>
 
       <!-- Dropdown -->
       <div class="dropdown px-1 float-start bg-info">

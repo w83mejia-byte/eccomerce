@@ -165,5 +165,10 @@ a.templateColor{
 }
 
 
+/*=============================================
+login-page y register-page
+=============================================*/
 
-
+.login-page, .register-page{
+    height: 70vh !important;
+}
