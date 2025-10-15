@@ -16,7 +16,13 @@
 
             //mostrar mensaje de error si existe
             if(!empty($mensaje)){
-                echo '<div class="alert alert-warning text-center mb-3" role="alert">'.$mensaje.'</div>';
+                echo '<div class="alert alert-warning text-center mb-3" role="alert">'.$mensaje.'</div>
+                
+                    <script>
+                        formatearCamposFormulario();
+                        sweetAlert("Atención","'.$mensaje.'","warning");
+                    </script>
+                ';
             }
         ?>
 

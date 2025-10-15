@@ -1,5 +1,7 @@
 <?php
 
+require_once "Models/AdminsModel.php";
+
 class AdminsController{
     /*=================================
     Login
@@ -20,6 +22,47 @@ class AdminsController{
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 return 'El formato del correo electrónico no es válido';
             }
+
+            if(strlen($password) < 8){
+                return 'La contraseña debe incluir al menos 8 caracteres';
+            }
+
+            $patron = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
+
+            if(!preg_match($patron,$password)){
+                return 'La contraseña debe incluir mayúsculas, minúsculas, números y caracteres especiales';
+            }
+
+            //Buscar administrador en la base de datos si pasa todas las validaciones
+
+            $adminModel = new AdminsModel();
+            $admin = $adminModel->findByEmail($email);
+
+            // var_dump($admin);
+            // echo '<pre>';print_r($admin);echo '</pre>';
+            // return;
+
+            if(!$admin){
+                return 'Administrador no encontrado';
+            }
+
+            //Para cuando esté la contraseña encriptada
+            // if(!password_verify($password, $admin['password_administrador'])){
+            //      return 'Contraseña incorrecta';
+            // }
+
+            if($password !== $admin['password_administrador']){
+                return 'Contraseña incorrecta';
+            }
+
+            $_SESSION['admin']= "ok";
+
+            $_SESSION['admin_id'] = $admin['id_administrador'];
+            $_SESSION['admin_email'] = $admin['email_administrador'];
+            $_SESSION['admin_nombre'] = $admin['nombre_administrador'];
+
+            echo '<script>location.reload();</script>';
+
         }
 
         return $mensaje; //vacío si no se ha enviado o no hubo errores

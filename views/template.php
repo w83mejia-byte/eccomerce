@@ -48,6 +48,20 @@ Capturar rutas de la URL
 
   <!-- Mis estilos -->
   <link rel="stylesheet" href="<?=$path?>views/sources/css/style.css">
+
+  <!-- SCRIPTS EXTERNOS -->
+
+  <!-- jQuery -->
+  <script src="views/sources/adminlte/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="views/sources/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- sweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="<?=$path?>views/sources/js/alerts.js"></script>
+
 </head>
 <body class="hold-transition sidebar-collapse layout-top-nav">
 <div class="wrapper">
@@ -79,13 +93,9 @@ Capturar rutas de la URL
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src="views/sources/adminlte/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="views/sources/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- bootstrap 5 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
 
 <!-- jdslider -->
 <script src="<?=$path?>views/sources/plugins/jdSlider/jdSlider.js"></script>
@@ -94,6 +104,8 @@ Capturar rutas de la URL
 
 <!-- AdminLTE App -->
 <script src="<?=$path?>views/sources/adminlte/dist/js/adminlte.min.js"></script>
+
+
 
 <!-- Scripts propios -->
 <script src="<?=$path?>views/sources/js/slide.js"></script>

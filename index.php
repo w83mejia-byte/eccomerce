@@ -14,6 +14,11 @@ if(!is_dir($directorio)){
 
 ini_set('error_log', $directorio . '/errores.log');
 
+//iniciar sesión
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
+
 
 //requerir controladores
 
