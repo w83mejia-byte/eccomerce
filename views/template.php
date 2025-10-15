@@ -98,7 +98,7 @@ Capturar rutas de la URL
 <!-- Scripts propios -->
 <script src="<?=$path?>views/sources/js/slide.js"></script>
 <script src="<?=$path?>views/sources/js/products.js"></script>
-
+<script src="<?=$path?>views/sources/js/forms.js"></script>
 </body>
 </html>
 
