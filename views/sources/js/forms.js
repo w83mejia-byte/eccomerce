@@ -20,3 +20,37 @@ SCRIPT PARA VALIDACIÓN DE BOOTSTRAP (4-5)
     });
   }, false);
 })();
+
+/*-------------------------------------------------
+validar formularios
+-------------------------------------------------*/
+function validarJs(campo, tipoValidacion) {
+    if (tipoValidacion === "email") {
+        let patron = /^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+
+        if (!patron.test((campo.target.value || '').trim())) {
+            $(campo.target).parent().addClass("was-validated");
+            $(campo.target).parent().children(".invalid-feedback")
+                .text("El correo electrónico está mal escrito");
+            return;
+        } else {
+            $(campo.target).parent().removeClass("was-validated");
+            $(campo.target).parent().children(".invalid-feedback").text("");
+        }
+    }
+
+    // if (tipoValidacion === "password") {
+    //     let patron = /^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+
+    //     if (!patron.test((campo.target.value || '').trim())) {
+    //         $(campo.target).parent().addClass("was-validated");
+    //         $(campo.target).parent().children(".invalid-feedback")
+    //             .text("El correo electrónico está mal escrito");
+    //         return;
+    //     } else {
+    //         $(campo.target).parent().removeClass("was-validated");
+    //         $(campo.target).parent().children(".invalid-feedback").text("");
+    //     }
+    // }
+}
+

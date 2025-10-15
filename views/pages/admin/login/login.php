@@ -9,10 +9,23 @@
         </div>
         <div class="card-body">
 
+        <?php
+            require_once "Controllers/AdminsController.php";
+            $controller = new AdminsController();
+            $mensaje = $controller->login();
+
+            //mostrar mensaje de error si existe
+            if(!empty($mensaje)){
+                echo '<div class="alert alert-warning text-center mb-3" role="alert">'.$mensaje.'</div>';
+            }
+        ?>
+
+
         <form method="post"  class="needs-validation" novalidate>
             <!-- campo email -->
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email" required>
+                
+                <input type="email" class="form-control" placeholder="Email" name="emailAdmin" onchange="validarJs(event, 'email')" required>
 
                 <div class="input-group-append">
                     <div class="input-group-text">
@@ -27,7 +40,7 @@
 
             <!-- Campo password -->
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="passwordAdmin" class="form-control" placeholder="Password" onchange="validarJs(event, 'password')" required>
 
                 <div class="input-group-append">
                     <div class="input-group-text">
