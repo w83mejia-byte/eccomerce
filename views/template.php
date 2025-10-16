@@ -75,7 +75,8 @@ Capturar rutas de la URL
   }
 
   if(
-    $arrayRutas[0] == "admin"
+    $arrayRutas[0] == "admin" ||
+    $arrayRutas[0] == "salir" 
   ){
     include "pages/".$arrayRutas[0]."/".$arrayRutas[0].".php";
   }else{

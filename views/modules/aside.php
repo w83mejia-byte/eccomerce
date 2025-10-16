@@ -15,7 +15,7 @@
           <img src="views/sources/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block text-capitalize"><?= $_SESSION['admin_nombre'] ;?></a>
         </div>
       </div>
 
@@ -71,6 +71,15 @@
               <p>
                 Widgets
                 <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/salir" class="nav-link bg-danger">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Cerrar Sesión
               </p>
             </a>
           </li>
