@@ -172,3 +172,18 @@ login-page y register-page
 .login-page, .register-page{
     height: 70vh !important;
 }
+
+
+
+/*=============================================
+Menu navegación administrativo - link active
+=============================================*/
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #47BAC1 !important;
+    color: #fff;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: #47BAC1 !important;
+    color: #fff;
+}

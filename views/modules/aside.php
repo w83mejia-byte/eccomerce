@@ -37,7 +37,7 @@
 
           <!-- Administradores -->
           <li class="nav-item">
-            <a href="/admin/administradores" class="nav-link active">
+            <a href="/admin/administradores" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "administradores"):?> active <?php endif ?>">
               <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Administradores
@@ -47,7 +47,7 @@
 
           <!-- Dashboard -->
           <li class="nav-item">
-            <a href="/admin/dashboard" class="nav-link">
+            <a href="/admin/dashboard" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "dashboard"):?> active <?php endif ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -56,7 +56,7 @@
           </li>
 
           <!-- Productos -->
-          <li class="nav-item">
+          <li class="nav-item <?php if(!empty($arrayRutas[1]) && in_array($arrayRutas[1],['categorias','subcategorias','inventario','mensajes'])):?> menu-open <?php endif ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-shopping-bag"></i>
               <p>
@@ -66,28 +66,34 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/categorias" class="nav-link">
+                <a href="/admin/categorias" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "categorias"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorías</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/subcategorias" class="nav-link">
+                <a href="/admin/subcategorias" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "subcategorias"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Subcategorías</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="views/sources/adminlte/index3.html" class="nav-link">
+                <a href="/admin/inventario" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "inventario"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Inventario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/mensajes" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "mensajes"):?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mensajes</p>
                 </a>
               </li>
             </ul>
           </li>
 
           <!-- Ventas -->
-          <li class="nav-item">
+          <li class="nav-item <?php if(!empty($arrayRutas[1]) && in_array($arrayRutas[1],['pedidos','informes','disputas'])):?> menu-open <?php endif ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-funnel-dollar"></i>
               <p>
@@ -97,19 +103,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/pedidos" class="nav-link">
+                <a href="/admin/pedidos" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "pedidos"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/informes" class="nav-link">
+                <a href="/admin/informes" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "informes"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Informes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/disputas" class="nav-link">
+                <a href="/admin/disputas" class="nav-link <?php if(!empty($arrayRutas[1]) && $arrayRutas[1] === "disputas"):?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Disputas</p>
                 </a>
