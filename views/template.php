@@ -39,7 +39,13 @@ Capturar rutas de la URL
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?=$path?>views/sources/adminlte/plugins/fontawesome-free/css/all.min.css">
-  
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?=$path?>views/sources/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?=$path?>views/sources/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?=$path?>views/sources/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
   <link rel="stylesheet" href="<?=$path?>views/sources/plugins/jdSlider/jdSlider.css">
   
   
@@ -55,9 +61,24 @@ Capturar rutas de la URL
   <script src="<?=$path?>views/sources/adminlte/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?=$path?>views/sources/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- bootstrap 5 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+  <!-- DataTables  & Plugins -->
+  <script src="<?=$path?>views/sources/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/jszip/jszip.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="<?=$path?>views/sources/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  
+  
   <!-- sweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="<?=$path?>views/sources/js/alerts.js"></script>
@@ -112,6 +133,7 @@ Capturar rutas de la URL
 <script src="<?=$path?>views/sources/js/slide.js"></script>
 <script src="<?=$path?>views/sources/js/products.js"></script>
 <script src="<?=$path?>views/sources/js/forms.js"></script>
+<script src="<?=$path?>views/sources/js/tables.js"></script>
 </body>
 </html>
 

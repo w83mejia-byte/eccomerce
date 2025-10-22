@@ -1,3 +1,35 @@
+/* VARIABLES */
+:root{
+    --colorPrincipal: #1a93ae;
+    --colorSecundario: #fb9e53;
+    --colorAuxiliar: #ffffff;
+    --colorRojo:rgb(119, 46, 46);
+    --colorPrincipalHover:#054d5d;
+}
+
+/* background corporativos o personalizados */
+.bg-principal{
+    background-color: var(--colorPrincipal) !important;
+    color: var(--colorAuxiliar) !important;
+}
+
+.bg-danger{
+    background-color: var(--colorRojo) !important;
+    color: var(--colorAuxiliar) !important;
+}
+
+
+/* botones */
+.btn-principal{
+    background-color: var(--colorPrincipal) !important;
+    color: var(--colorAuxiliar) !important;
+}
+
+.btn-principal:hover{
+    background-color: var(--colorPrincipalHover) !important;
+    color: var(--colorAuxiliar) !important;
+}
+
 body{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -13,7 +45,6 @@ ul, ol{
 }
 
 /* !slider  */
-
 
 .jd-slider{
     position: relative;
@@ -153,7 +184,7 @@ footer
 =============================================*/
 
 a.templateColor{
-    color: #47BAC1;
+    color: var(--colorPrincipal);
 }
 
 .footer li a{
@@ -161,7 +192,7 @@ a.templateColor{
 }
 
 .footer li a:hover{
-    color:#47BAC1 !important;
+    color:var(--colorPrincipal) !important;
 }
 
 
@@ -179,11 +210,11 @@ login-page y register-page
 Menu navegación administrativo - link active
 =============================================*/
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
-    background-color: #47BAC1 !important;
+    background-color: var(--colorPrincipal) !important;
     color: #fff;
 }
 
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
-    background-color: #47BAC1 !important;
+    background-color: var(--colorPrincipal) !important;
     color: #fff;
 }

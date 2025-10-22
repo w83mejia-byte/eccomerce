@@ -18,7 +18,7 @@
       <?php endif;?>
 
       <!-- Dropdown -->
-      <div class="dropdown px-1 float-start bg-info">
+      <div class="dropdown px-1 float-start bg-principal">
         
         <a href="#" id="dropdownSubMenu1" class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -157,7 +157,7 @@
       <form class="form-inline">
         <div class="input-group w-100 me-0 me-lg-4">
           <input type="search" class="form-control rounded-0 p-3 pe-5" placeholder="Buscar..." style="height:40px">
-          <div class="input-group-append px-2 bg-info">
+          <div class="input-group-append px-2 bg-principal">
             <button class="btn btn-navbar text-white" type="submit">
               <i class="fas fa-search"></i>
             </button>
@@ -172,7 +172,7 @@
       <div class="my-2 my-lg-0 d-flex justify-content-center">
         
         <a href="#">
-          <button class="btn btn-default float-start rounded-0 border-0 py-2 px-3 bg-info">
+          <button class="btn btn-default float-start rounded-0 border-0 py-2 px-3 bg-principal">
             <i class="fa fa-shopping-cart"></i>
           </button>
         </a>
