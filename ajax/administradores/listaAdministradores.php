@@ -28,6 +28,33 @@ $respuesta = AdminsModel::getDataTable([
     'orderDir'      => $orderDir
 ]);
 
+$data = [];
 
-echo '<pre>';print_r($respuesta);echo '</pre>';
-return;
+foreach ($respuesta['rows'] as $i => $r){
+    $acciones = '
+        <div class="btn-group">
+            <a href="#" class="bg-info border-0 rounded-pill mr-2 btn-sm px-3">
+                <i class="fas fa-pencil-alt text-white"></i>
+            </a>
+            <a href="#" class="bg-danger border-0 rounded-pill mr-2 btn-sm px-3">
+                <i class="fas fa-trash-alt text-white"></i>
+            </a>
+        </div>
+    ';
+
+    $data[] = [
+        $start + $i + 1,
+        htmlspecialchars($r['nombre_administrador']),
+        htmlspecialchars($r['email_administrador']),
+        htmlspecialchars($r['rol_administrador']),
+        $r['ultimo_login_administrador'] ?: '-',
+        $acciones
+    ];
+}
+
+echo json_encode([
+    'draw'              => $draw,
+    'recordsTotal'      => $respuesta['total'],
+    'recordsFiltered'   => $respuesta['total'],
+    'data'              => $data,
+], JSON_UNESCAPED_UNICODE);
