@@ -1,2 +1,0 @@
-[22-Oct-2025 14:06:17 Europe/Berlin] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_iutkn4intsd643dbrh68fqt571, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\ecommerceG2\index.php on line 19
-[22-Oct-2025 14:06:17 Europe/Berlin] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\ecommerceG2\index.php on line 19
