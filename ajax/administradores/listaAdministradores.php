@@ -58,6 +58,9 @@ $respuesta = AdminsModel::getDataTable([
 $data = [];
 
 foreach ($respuesta['rows'] as $i => $r){
+
+    $id= (int)$r['id_administrador'];
+
     //ruta de acción directa con id normal
     $editUrl = "/admin/administradores/editar/{$id}";
     
