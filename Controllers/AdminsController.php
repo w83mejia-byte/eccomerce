@@ -114,6 +114,59 @@ class AdminsController{
         //     return 'Las contraseñas no coinciden';
         // }
 
+        $regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])+$/';
+
+        if(!preg_match($regex, $password)){
+            return 'La contraseña debe incluir mayúsculas,minúsculas,numeros y caracteres especiales';
+        }
+
+        //4) normaliza/valida roles permitidos
+        $rolesPermitidos = ['administrador', 'editor', 'superadministrador'];
+
+        if(!in_array($rol, $rolesPermitidos)){
+            $rol = 'administrador';
+        }
+
+        try{
+
+            $adminModel = new AdminsModel();
+
+            //verificar email único
+            $existe = $adminModel->findByEmail($email);
+            if($existe){ 
+                return 'El correo ya está registrado';
+            }
+
+            // if($adminModel->findByEmail($email)){ 
+            //     return 'El correo ya está registrado';
+            // }
+
+
+            //otro hash seguro
+            // $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $opts = [
+                'memory_cost' => 1 << 17, //128mb
+                'time_cost' => 4,
+                'threads'   => 2,
+            ];
+
+            $hash = password_hash($password, PASSWORD_ARGON2ID, $opts); // más seguro
+
+            $idnuevo = $adminModel->create([
+
+            ]);
+
+
+
+
+
+        }catch(Throwable $e){
+            error_log('[registrar admin]'. $e->getMessage());
+            return 'Ocurrió un error inesperado al registrar. Intenta nuevamente.';
+        }   
+
+
 
     }
 }
