@@ -106,18 +106,18 @@ class AdminsController{
 
         //3) reglas de contraseña
 
-        if(strlen($password) < 8){
-            return 'La contraseña debe tener al menos 8 caracteres';
-        }
+        // if(strlen($password) < 8){
+        //     return 'La contraseña debe tener al menos 8 caracteres';
+        // }
 
         // if($password !== $passwordConfirm){
         //     return 'Las contraseñas no coinciden';
         // }
 
-        $regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])+$/';
+        $regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
 
         if(!preg_match($regex, $password)){
-            return 'La contraseña debe incluir mayúsculas,minúsculas,numeros y caracteres especiales';
+            return 'La contraseña debe incluir mayúsculas,minúsculas,números y caracteres especiales';
         }
 
         //4) normaliza/valida roles permitidos
@@ -154,12 +154,23 @@ class AdminsController{
             $hash = password_hash($password, PASSWORD_ARGON2ID, $opts); // más seguro
 
             $idnuevo = $adminModel->create([
-
+                'nombre_administrador'    => $nombre,
+                'email_administrador'     => $email,
+                'password_administrador'  => $hash,
+                'is_active_administrador' => 1,
             ]);
 
 
+            if(!$idnuevo){
+                return 'No se pudo registrar el administrador. Intente nuevamente';
+            }
 
-
+            echo '
+                <script>
+                    formatearCamposFormulario();
+                    sweetAlert("Registro exitoso", "Administrador registrado exitosamente", "success", "/admin/administradores");
+                </script>
+            ';
 
         }catch(Throwable $e){
             error_log('[registrar admin]'. $e->getMessage());
@@ -170,3 +181,4 @@ class AdminsController{
 
     }
 }
+
