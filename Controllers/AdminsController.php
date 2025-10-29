@@ -67,4 +67,53 @@ class AdminsController{
 
         return $mensaje; //vacío si no se ha enviado o no hubo errores
     }
+
+    /*=================================
+    Registrar
+    =================================*/
+    public function registrar()
+    {
+        $mensaje = "";
+
+        //solo procesar si viene por post
+        if(($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST'){
+            return $mensaje;
+        }
+
+        //opcional pero recomendado verificación CSRF
+
+        //1 Captura y sanitización
+        $nombre = trim((string)($_POST['nombre_administrador'] ?? ''));
+        $email = filter_var(trim((string)($_POST['email_administrador'] ?? '')), FILTER_SANITIZE_EMAIL);
+        $password = trim((string)($_POST['password_administrador'] ?? ''));
+        //$passwordConfirm = trim((string)($_POST['password_confirm_administrador'] ?? ''));
+        $rol = trim((string)($_POST['rol_administrador'] ?? 'administrador'));
+
+        //2 validaciones básicas
+        if(
+            $nombre === ''||
+            $email === '' ||
+            $password === ''
+            //|| $passwordConfirm === ''
+        ){
+            return 'Por favor, completa todos los campos obligatorios';
+        }
+
+        //validar el formato de email
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            return 'El formato del correo electrónico no es válido';
+        }
+
+        //3) reglas de contraseña
+
+        if(strlen($password) < 8){
+            return 'La contraseña debe tener al menos 8 caracteres';
+        }
+
+        // if($password !== $passwordConfirm){
+        //     return 'Las contraseñas no coinciden';
+        // }
+
+
+    }
 }
