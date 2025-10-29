@@ -22,36 +22,59 @@ SCRIPT PARA VALIDACIÓN DE BOOTSTRAP (4-5)
 })();
 
 /*-------------------------------------------------
+Expresiones Regulares
+-------------------------------------------------*/
+const EMAIL_REGEX = /^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+const TEXTO_REGEX = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}$/;
+const PASSWORD_REGEX =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W_).{8,}$/;
+
+
+
+/*-------------------------------------------------
 validar formularios
 -------------------------------------------------*/
-function validarJs(campo, tipoValidacion) {
-    if (tipoValidacion === "email") {
-        let patron = /^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+  /** 
+    Validación dinámica con mensajes personalizados
+    * @param {Event} event - evento input, change, blur
+    * @param {string} tipoValidacion - tipo de validación ('texto' | 'email' | 'password| | etc)
+  */
 
-        if (!patron.test((campo.target.value || '').trim())) {
-            $(campo.target).parent().addClass("was-validated");
-            $(campo.target).parent().children(".invalid-feedback")
-                .text("El correo electrónico está mal escrito");
-            return;
-        } else {
-            $(campo.target).parent().removeClass("was-validated");
-            $(campo.target).parent().children(".invalid-feedback").text("");
-        }
+function validarJs(event, tipoValidacion) {
+
+    const input = event.target;
+    const valor = (input.value || "").trim();
+
+    //localiza el contenedor padre y el bloque de feedback
+    const contenedor = input.closest(".form-group, .b-3, .form-floating, div") || input.parentElement;
+    const feedback = contenedor ? contenedor.querySelector(".invalid-feedback") : null;
+
+    let valido = false;
+    let mensaje = "";
+
+    switch (tipoValidacion){
+      case "texto":
+        valido = TEXTO_REGEX.test(valor);
+        mensaje = valido ? "Válido" : "Solo letras y espacios (mínimo dos caracteres)."
+        break;
+
+      case "email":
+        valido = EMAIL_REGEX.test(valor);
+        mensaje = valido ? "Válido" : "Escribe un correo válido (ej. nombre@dominio.com)"
+        break;
+
+      case "password":
+        valido = PASSWORD_REGEX.test(valor);
+        mensaje = valido ? "Constraseña Válida" : "Debe tener al menos 8 caracteres, una minúscula, un número y un símbolo."
+        break;
     }
 
-    // if (tipoValidacion === "password") {
-    //     let patron = /^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/;
+    //aplicamos el mensaje y estado de validez
+    input.setCustomValidity(valido ? "" : mensaje);
+    if(feedback) feedback.textContent = mensaje;
 
-    //     if (!patron.test((campo.target.value || '').trim())) {
-    //         $(campo.target).parent().addClass("was-validated");
-    //         $(campo.target).parent().children(".invalid-feedback")
-    //             .text("El correo electrónico está mal escrito");
-    //         return;
-    //     } else {
-    //         $(campo.target).parent().removeClass("was-validated");
-    //         $(campo.target).parent().children(".invalid-feedback").text("");
-    //     }
-    // }
+    //pinta estados de bootstrap
+    if(input.form) input.form.classList.add("was-validate");
+
 }
 
 /*-------------------------------------------------
@@ -59,12 +82,25 @@ Recordar email en el login
 -------------------------------------------------*/
 function recordarEmail(event){
   const emailInput = document.querySelector('[name=emailAdmin]');
-  const rememberCheckbox = event.target;
+  const rememberCheckbox = event?.target;
+
+  if(!emailInput || !rememberCheckbox) return;
+
+  const email = (emailInput.value || "").trim();
 
   if(rememberCheckbox.checked){
-    //guardamos el email y el estado del chechbox
-    localStorage.setItem("emailAdmin", emailInput.value.trim());
-    localStorage.setItem("checked", "true");
+    //guardamos el email y el estado del chechbox si es válido
+    if(EMAIL_REGEX.test(email)){
+      localStorage.setItem("emailAdmin", email);
+      localStorage.setItem("checked", "true");
+    }else{
+      rememberCheckbox.checked = false;
+      localStorage.removeItem("emailAdmin");
+      localStorage.removeItem("checked");
+      emailInput.setCustomValidity("Correo inválido");
+      if(emailInput.form) emailInput.form.classList.add("was-validated");
+    }
+
   }else{
     localStorage.removeItem("emailAdmin");
     localStorage.removeItem("checked");
@@ -75,16 +111,33 @@ function recordarEmail(event){
 Recuperar email en el login
 -------------------------------------------------*/
 function getEmail(){
+
+  const emailInput = document.querySelector('[name=emailAdmin]');
+  const rememberCheckbox = document.querySelector("#remember");
+
+  if(!emailInput || !rememberCheckbox) return; //no es el login
+
   const emailStored = localStorage.getItem("emailAdmin");
-  const rememberState = localStorage.getItem("checked");
+  const rememberState = localStorage.getItem("checked") === "true";
 
-  if(emailStored){
-    document.querySelector('[name=emailAdmin]').value = emailStored;
-  }
+  if(emailStored) emailInput.value = emailStored;
+  rememberCheckbox.checked = rememberState;
 
-  if(rememberState){
-    document.querySelector('#remember').checked = true;
-  }
+  //validacion dinámica del campo email
+  emailInput.addEventListener("input", (e)=> validarJs(e, "email"));
+  emailInput.addEventListener("blur", (e)=> validarJs(e, "email"));
+
+  //sincronizar storage solo si el correo es válido y "recordar" está activo
+  emailInput.addEventListener("input", ()=>{
+    const v = (emailInput.value || "").trim();
+    if(rememberCheckbox.checked && EMAIL_REGEX.test(v)){
+      localStorage.setItem("emailAdmin", v);
+    }
+  })
+
 }
 
-getEmail()
+/*-------------------------------------------------
+ejecutar al cargar el DOM
+-------------------------------------------------*/
+document.addEventListener("DOMContentLoaded",getEmail)
