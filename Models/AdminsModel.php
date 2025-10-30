@@ -29,7 +29,6 @@ class AdminsModel{
         }
     }
 
-
     //Crear administrador
     public static function create(array $data): ?int
     {
@@ -90,7 +89,6 @@ class AdminsModel{
         }
     }
 
-
     //datatable
     public static function getDataTable(array $params): array{
         $pdo = Conexion::pdo();
@@ -144,4 +142,34 @@ class AdminsModel{
         ];
 
     }
+
+    //Actualizar el último login
+    public static function updateLastLogin(int $id):bool
+    {
+        try{
+
+            $sql = "UPDATE administradores 
+                    SET ultimo_login_administrador = :now
+                    WHERE id_administrador = :id
+                    ";
+
+            $pdo = Conexion::pdo();
+            $stmt = $pdo->prepare($sql);
+
+            //generar la marca de tiempo actual
+            $now = date('Y-m-d H:i:s');
+
+            //vincular parámetros
+            $stmt->bindValue(':now', $now, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+
+            //ejecutar y devolver true si tuvo éxito
+            return $stmt->execute();
+
+        }catch(PDOException $e){
+            error_log("error en updateLastLogin: " . $e->getMessage());
+            return false;
+        }
+    }
+
 }

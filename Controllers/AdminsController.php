@@ -47,13 +47,15 @@ class AdminsController{
             }
 
             //Para cuando esté la contraseña encriptada
-            // if(!password_verify($password, $admin['password_administrador'])){
-            //      return 'Contraseña incorrecta';
+            if(!password_verify($password, $admin['password_administrador'])){
+                 return 'Contraseña incorrecta';
+            }
+
+            // if($password !== $admin['password_administrador']){
+            //     return 'Contraseña incorrecta';
             // }
 
-            if($password !== $admin['password_administrador']){
-                return 'Contraseña incorrecta';
-            }
+            AdminsModel::updateLastLogin((int)$admin['id_administrador']);
 
             $_SESSION['admin']= "ok";
 

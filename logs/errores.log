@@ -1,0 +1,2 @@
+[30-Oct-2025 19:15:47 Europe/Berlin] error en updateLastLogin: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login_administrador' in 'field list'
+[30-Oct-2025 19:17:00 Europe/Berlin] error en updateLastLogin: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
